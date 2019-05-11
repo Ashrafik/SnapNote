@@ -1,0 +1,246 @@
+@font-face {
+	font-family: 'IRANSans';
+	src: url('../fonts/IRANSans.eot');
+	src: url('../fonts/IRANSans.eot?#iefix') format('embedded-opentype');
+	src: url('../fonts/IRANSans.svg') format('svg');
+	src: url('../fonts/IRANSans.ttf') format('truetype');
+	src: url('../fonts/IRANSans.woff') format('woff');
+	src: url('../fonts/IRANSans.woff2') format('woff2');
+}
+
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+html {
+    background-color: #fec900;
+    background-image: url(../images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+    font-family: 'IRANSans';    
+}
+
+* {
+    direction: rtl;
+    text-align: right;
+    outline: none;
+}
+
+button:focus, textarea:focus, input:focus {
+    outline: none;
+}
+
+label#snapNote {
+    display: block;
+    background: url(../images/bubble.png) no-repeat;
+    width: 224px;
+    height: 229px;
+    position: fixed;
+    top: -12px;
+    background-size: 80%;
+}
+
+div#root {
+    display: grid;
+    padding: 0 20px;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 170px;
+
+    span#hint {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        background-color: white;
+        padding: 4px 15px 3px;
+        border-radius: 0 0 5px 5px;
+        font-weight: bold;
+    }
+    div.noteBoard {
+        // grid-column: 1 / 9 span;
+        display: grid;
+        gap: 30px;
+        margin-bottom: 100px;        
+
+        div.note {
+            position: relative;
+            background-color: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 5px 0 5px 0;
+            p {
+                line-height: 23px;
+                font-size: 14px;
+                margin-bottom: 40px;
+            }
+            div {
+                position: absolute;
+                bottom: 10px;
+            }
+            textarea {
+                line-height: 23px;
+                font-size: 14px;
+                display: block;
+                width: 100%;
+                height: calc(100% - 105px);
+                background-color: #fbe89d;
+            }
+            label {
+                font-family: Arial;
+                font-weight: bold;
+                font-size: 40px;
+                display: block;
+                float: left;
+                width: calc(100% + 20px);
+                text-align: left;
+                line-height: 50px;
+                margin-left: -20px;
+                margin-bottom: 10px;
+                color: #FFF;
+                direction: ltr;
+                text-indent: 15px;  
+                background-size: contain !important;                      
+                &.bgClass0 {
+                    background: no-repeat url(../images/0.png);
+                }
+                &.bgClass1 {
+                    background: no-repeat url(../images/1.png);
+                }
+                &.bgClass2 {
+                    background: no-repeat url(../images/2.png);
+                }
+                &.bgClass3 {
+                    background: no-repeat url(../images/3.png);
+                }
+                &.bgClass4 {
+                    background: no-repeat url(../images/4.png);
+                }
+                &.bgClass5 {
+                    background: no-repeat url(../images/5.png);
+                }
+                &.bgClass6 {
+                    background: no-repeat url(../images/6.png);
+                }
+                &.bgClass7 {
+                    background: no-repeat url(../images/7.png);
+                }
+                &.bgClass8 {
+                    background: no-repeat url(../images/8.png);
+                }
+                &.bgClass9 {
+                    background: no-repeat url(../images/9.png);
+                }
+            }
+            &:hover {
+                background-color: #FFF;
+                cursor: default;
+            }
+        }            
+    }        
+}
+
+
+
+@media (min-width: 500px) {
+    div#root div.noteBoard {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    label#snapNote {
+        right: 30px;
+    }            
+}
+
+@media (max-width: 500px) {
+    div#root div.noteBoard {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    label#snapNote {
+        right: 10px;
+    }            
+}
+
+@media (min-width: 800px) {
+    div#root div.noteBoard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }                
+    label#snapNote {
+        right: 120px;
+    }
+}
+
+@media (min-width: 1200px) {
+    div#root div.noteBoard {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }            
+    label#snapNote {
+        right: 200px;
+    }
+}
+
+button {
+    display: block;
+    width: 40px;
+    height: 30px;
+    border: 0;
+    text-align: center;
+    font-size: 21px;
+    border-radius: 3px;
+    margin-left: 10px;
+    float: right;
+    &:hover {
+        cursor: pointer;
+        color: #FFF;
+    }
+    &.btn-add {
+        width: 100%;
+        height: 100%;
+        font-size: 70px;
+        color: #008a8e;
+        background-color: #ffda40;
+    }
+    &.btn-add:hover {
+        background-color: #FFF;
+        color: #002b36;
+    }
+    &.btn-edit:hover {
+        background-color: green;
+    }
+    &.btn-delete:hover {
+        background-color: crimson;
+    }
+    &.btn-save:hover {
+        background-color: forestgreen;
+    }
+}
+
+footer {
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding: 0 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: overline;
+    text-transform: uppercase;
+}
